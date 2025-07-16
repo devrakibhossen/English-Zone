@@ -21,7 +21,7 @@ const Navbar = () => {
         role="button"
         className="flex gap-1.5 items-center cursor-pointer"
       >
-        Spoken <CgSelect />
+        Learn English <CgSelect />
       </div>
       <ul
         tabIndex={0}
@@ -38,7 +38,7 @@ const Navbar = () => {
     </div>
   );
   return (
-    <div className="py-1.5 border-b border-gray-300 ">
+    <div className="py-2 border-b border-gray-300 fixed top-0 left-0 w-full z-20 bg-white/50 backdrop-blur-md ">
       <div className="w-11/12  max-w-[1300px] mx-auto flex justify-between items-center">
         <img
           src="/englishzone.png"
@@ -52,17 +52,19 @@ const Navbar = () => {
             </li>
             <SpokenDropdown />
             <li>
-              <Link to="/">Vocabulary</Link>
+              <Link to="/vocabulary">Vocabulary</Link>
             </li>
             <li>
               <Link to="/">Grammar</Link>
             </li>
             <li>
-              <Link to="/">Quiz</Link>
+              <Link to="/">Exam</Link>
             </li>
-            <button className="border border-gray-300 py-[2px] px-4 rounded-full cursor-pointer">
-              Login
-            </button>
+            <Link to="/login">
+              <button className="border border-gray-300 py-[2px] px-4 rounded-full cursor-pointer">
+                Login
+              </button>
+            </Link>
           </ul>
           {open ? (
             <RxCross2
@@ -77,23 +79,25 @@ const Navbar = () => {
           )}
 
           {open && (
-            <ul className="flex absolute bg-white w-64 p-5 h-full top-13 right-0 flex-col lg:hidden gap-4 text-sm">
+            <ul className="flex z-30 absolute bg-white w-64 p-5 h-screen top-13 right-0 flex-col lg:hidden gap-4 text-sm">
               <li>
                 <Link to="/">Home</Link>
               </li>
               <SpokenDropdown />
               <li>
-                <Link to="/">Vocabulary</Link>
+                <Link to="/vocabulary">Vocabulary</Link>
               </li>
               <li>
                 <Link to="/">Grammar</Link>
               </li>
               <li>
-                <Link to="/">Quiz</Link>
+                <Link to="/">Exam</Link>
               </li>
-              <button className="border border-gray-300 py-[2px] px-4 rounded-full cursor-pointer">
-                Login
-              </button>
+              <Link to="/login">
+                <button className="border border-gray-300 py-[2px] px-4 rounded-full cursor-pointer">
+                  Login
+                </button>
+              </Link>
             </ul>
           )}
         </div>
